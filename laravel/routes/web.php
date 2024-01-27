@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,8 @@ Route::get("info", function(){
     return phpinfo();
 });
 
-Route::get("product", function(){
-    return view("product", ["productName" => "Laptop", "productPrice" => 1000]);
-});
+// Route::get("product", function(){
+//     return view("product", ["productName" => "Laptop", "productPrice" => 1000]);
+// });
+
+Route::get("product", [ProductController::class, "index"]);
