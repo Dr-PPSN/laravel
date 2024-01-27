@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/info", function(){
+Route::get("info", function(){
     return phpinfo();
+});
+
+Route::get("product", function(){
+    return view("product", ["productName" => "Laptop", "productPrice" => 1000]);
 });
