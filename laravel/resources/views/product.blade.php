@@ -17,9 +17,24 @@
         <div class="container">
             <div class="row mt-5">
                 <div class="col-md-12">
-                    Product page<br>
-                    Product name: {{ $productName }}<br>
-                    Product price: {{ $productPrice }}
+                    <h1>Product page</h1><br><br>
+                    <div class="row">
+                    @foreach($data as $product)
+                        <div class="col-4 text-center">
+                            <h3>{{$product->name}}</h3>
+                        </div>
+                        <div class="col-4 text-center">
+                            <h3>{{$product->price}},00€</h3>
+                        </div>
+                        <div class="col-4 text-center">
+                            @if($product->is_available)
+                                <h3>Available</h3>
+                            @else
+                                <h3>Not available</h3>
+                            @endif
+                        </div>
+                    @endforeach
+                    </div>
                 </div>
             </div>
 
