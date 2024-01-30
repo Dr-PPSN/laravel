@@ -21,7 +21,7 @@
                         <div class="card-header">Home</div>
 
                         <div class="card-body">
-                            <p class="card-text">Welcome to the home page!</p>
+                            @include('shoortcut')
                         </div>
                     </div>
                 </div>
