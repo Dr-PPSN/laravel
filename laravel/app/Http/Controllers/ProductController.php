@@ -15,7 +15,11 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $data = Product::find($id);
+        $data = Product::where("id", $id)->get();
+        if(count($data) == 0)
+        {
+            abort(404);
+        }
         return view("product", compact("data"));
     }
 }
